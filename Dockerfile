@@ -4,7 +4,8 @@ WORKDIR /app
 COPY . .
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.5 \
-    python3-pip \
+    python-pip \
+    pip install --upgrade pip \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
