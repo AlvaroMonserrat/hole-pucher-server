@@ -1,7 +1,5 @@
 # syntax=docker/dockerfile:1
 FROM ubuntu:18.04
-WORKDIR /app
-COPY . .
 RUN apt-get update
 RUN apt-get install software-properties-common -y
 RUN apt-get update
@@ -13,5 +11,7 @@ RUN apt-get update
 RUN apt-get install Python3.7 -y
 RUN apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev -y
 RUN pip3 install twisted
-CMD ["python3", "./server.py 3000"]
-EXPOSE 3000
+WORKDIR /app
+COPY . .
+#CMD ["python3", "./server.py 3000"]
+#EXPOSE 3000
