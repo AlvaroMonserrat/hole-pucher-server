@@ -3,7 +3,7 @@ FROM ubuntu:16.04
 WORKDIR /app
 COPY . .
 RUN apt-get update && apt-get install -y --no-install-recommends \
-    python3.5 \
+    python3.6 \
     python-pip \
     && \
     apt-get clean && \
