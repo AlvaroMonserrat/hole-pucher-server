@@ -9,9 +9,9 @@ RUN add-apt-repository universe
 RUN apt-get update
 RUN apt-get install python3-pip -y
 RUN add-apt-repository ppa:deadsnakes/ppa 
-RUN apt-get install Python3.10 
+RUN apt-get install Python3.10  -y
 RUN apt-get update
-RUN apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev
+RUN apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libnss3-dev libssl-dev libreadline-dev libffi-dev libsqlite3-dev wget libbz2-dev -y
 RUN pip install twisted
 CMD ["python", "./server.py 3000"]
 EXPOSE 3000
