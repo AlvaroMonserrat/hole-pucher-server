@@ -10,5 +10,5 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     rm -rf /var/lib/apt/lists/*
 RUN pip install -U --upgrade pip
 RUN pip install twisted
-CMD ["python3", "./server.py 3000"]
+CMD ["python", "./server.py 3000"]
 EXPOSE 3000
