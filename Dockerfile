@@ -2,6 +2,9 @@
 FROM ubuntu:18.04
 WORKDIR /app
 COPY . .
+RUN apt-get update
+RUN apt-get install software-properties-common
+RUN apt-get update
 RUN add-apt-repository universe
 RUN apt-get update
 RUN apt-get install python3-pip
