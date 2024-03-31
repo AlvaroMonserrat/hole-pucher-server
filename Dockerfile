@@ -1,8 +1,13 @@
 # syntax=docker/dockerfile:1
-FROM python:3
+FROM ubuntu:16.04
 WORKDIR /app
 COPY . .
-RUN pip install --no-cache-dir --upgrade pip \
-  && pip install --no-cache-dir -r requirements.txt
-CMD ["python", "./server.py 3000"]
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    python3.5 \
+    python3-pip \
+    && \
+    apt-get clean && \
+    rm -rf /var/lib/apt/lists/*
+RUN pip3 install twisted
+CMD ["python3", "./server.py 3000"]
 EXPOSE 3000
