@@ -5,10 +5,10 @@ COPY . .
 RUN apt-get update && apt-get install -y --no-install-recommends \
     python3.5 \
     python-pip \
-    pip install --upgrade pip \
     && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
+RUN pip install --upgrade pip
 RUN pip install twisted
 CMD ["python3", "./server.py 3000"]
 EXPOSE 3000
