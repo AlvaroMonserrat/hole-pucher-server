@@ -13,5 +13,5 @@ RUN apt-get install build-essential zlib1g-dev libncurses5-dev libgdbm-dev libns
 RUN pip3 install twisted
 WORKDIR /app
 COPY . .
-#CMD ["python3", "./server.py 3000"]
-#EXPOSE 3000
+CMD ["python3", "./server.py 3000"]
+EXPOSE 3000
